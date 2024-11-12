@@ -1,6 +1,13 @@
-import { FastifyAdapter } from '@nestjs/platform-fastify';
+import {
+  FastifyAdapter,
+  NestFastifyApplication,
+} from '@nestjs/platform-fastify';
 import { FastifyInstance } from 'fastify';
 import { generateRandomId } from '../utils/crypto';
+import { VersioningType } from '@nestjs/common';
+import { AppConfig } from '../config/app.config';
+import { Logger } from '@aiofc/logger';
+import fastifyHelmet from '@fastify/helmet';
 
 // TODO: FastifyAdapter 是 Fastify 的 NestJS 适配器，它允许我们在 NestJS 应用中使用 Fastify。
 export function createFastifyInstance(): FastifyAdapter {
@@ -18,9 +25,7 @@ export function createFastifyInstance(): FastifyAdapter {
 }
 
 // TODO: 关于提高 Fastify 与 Express 中间件的兼容性的建议(官方)
-export function applyExpressCompatibility(
-  fastifyInstance: FastifyInstance
-) {
+function applyExpressCompatibility(fastifyInstance: FastifyInstance) {
   // this is a recommendation from fastify to improve compatibility with express middlewares
   fastifyInstance
     .addHook('onRequest', async (req) => {
@@ -40,4 +45,24 @@ export function applyExpressCompatibility(
     );
 }
 
-
+export function initialize(
+  app: NestFastifyApplication,
+  config: AppConfig,
+  logger: Logger,
+  fastifyInstance: FastifyInstance
+) {
+  app.useLogger(logger);
+  app.flushLogs(); // 刷新日志：将内存中的日志数据写入到持久存储（如文件或数据库）中
+  app.setGlobalPrefix(config.prefix);
+  // 启用跨域请求
+  app.enableCors(config.cors);
+  // 用于启用 API 版本控制。这里使用了 URI 版本控制策略。
+  app.enableVersioning({
+    type: VersioningType.URI,
+  });
+  // 启用应用程序的关闭钩子。在应用程序关闭时执行必要的清理操作，从而提高应用程序的可靠性和稳定性。
+  app.enableShutdownHooks();
+  // 提高 Fastify 与 Express 的兼容性
+  applyExpressCompatibility(fastifyInstance);
+  app.register(fastifyHelmet, {});
+}
