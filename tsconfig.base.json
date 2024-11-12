@@ -17,6 +17,9 @@
     "allowJs": true,
     "esModuleInterop": true,
     "sourceMap": true,
-    "skipDefaultLibCheck": true
+    "skipDefaultLibCheck": true,
+    "paths": {
+      "@aiofc/config": ["packages/config/src/index.ts"]
+    }
   }
 }
