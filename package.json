@@ -45,8 +45,12 @@
     "@swc-node/register": "~1.9.1",
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
+    "@types/debug": "^4.1.12",
     "@types/jest": "^29.5.14",
+    "@types/lodash.frompairs": "^4.0.9",
+    "@types/lodash.merge": "^4.6.9",
     "@types/node": "~18.16.9",
+    "@types/set-value": "^4.0.3",
     "commitizen": "^4.3.1",
     "cz-customizable": "^7.2.1",
     "eslint": "^9.8.0",
@@ -65,11 +69,21 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
+    "@aiofc/config": "workspace:*",
+    "@nestjs/axios": "3.1.1",
     "@nestjs/common": "^10.0.2",
     "@nestjs/core": "^10.0.2",
     "@nestjs/platform-express": "^10.0.2",
-    "axios": "^1.6.0",
+    "axios": "1.7.7",
+    "chalk": "4.1.2",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "cosmiconfig": "^9.0.0",
+    "debug": "^4.3.7",
+    "lodash.frompairs": "4.0.1",
+    "lodash.merge": "4.6.2",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.8.0"
+    "rxjs": "^7.8.0",
+    "set-value": "4.1.0"
   }
 }

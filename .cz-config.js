@@ -27,6 +27,10 @@ module.exports = {
     { name: 'examples' },
     { name: 'tools' },
     { name: 'monorepo' },
+    { name: 'packages & examples' },
+    { name: 'packages & apps' },
+    { name: 'libs & examples' },
+    { name: 'libs & apps' },
   ],
   // 消息步骤
   messages: {
