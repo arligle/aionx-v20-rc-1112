@@ -1,0 +1,20 @@
+{
+  "recommendations": [
+    "nrwl.angular-console",
+    "esbenp.prettier-vscode",
+    "firsttris.vscode-jest-runner",
+    "formulahendry.code-runner",
+    "vsls-contrib.codetour",
+    "usernamehw.errorlens",
+    "bierner.docs-view",
+    "wayou.vscode-todo-highlight",
+    "imgildev.vscode-auto-barrel",
+    "steoates.autoimport",
+    "formulahendry.auto-rename-tag",
+    "streetsidesoftware.code-spell-checker",
+    "loczek.next-js-ts-snippets",
+    "imgildev.vscode-nx-pack",
+    "mushan.vscode-paste-image",
+    "chakrounanas.turbo-console-log"
+  ]
+}

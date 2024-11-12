@@ -1,0 +1,26 @@
+{
+  "name": "hello-word",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "examples/hello-word/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "hello-word:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "hello-word:build:development"
+        },
+        "production": {
+          "buildTarget": "hello-word:build:production"
+        }
+      }
+    }
+  }
+}

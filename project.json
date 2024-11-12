@@ -1,0 +1,5 @@
+{
+  "name": "@aionx/source",
+  "$schema": "packages/nx/schemas/project-schema.json"
+
+}
