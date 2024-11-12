@@ -32,7 +32,7 @@
       "options": {
         "targetName": "test"
       },
-      "exclude": ["apps/demo-e2e/**/*"]
+      "exclude": ["apps/demo-e2e/**/*", "examples/postgres-js-e2e/**/*"]
     },
     {
       "plugin": "@nx/webpack/plugin",
