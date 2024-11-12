@@ -1,14 +1,15 @@
 - 概述
+  - [说明](docs/summary/index)
   - [参考项目](docs/summary/reference)
 
 
-- [配置](docs/config/aionx-config)
+- [配置](docs/config/aiofc-config)
 
-- [日志](docs/config/aionx-config)
+- [日志](docs/config/aiofc-config)
 
-- [安全](docs/config/aionx-config)
+- [安全](docs/config/aiofc-config)
 
-- [数据库](docs/config/aionx-config)
+- [数据库](docs/config/aiofc-config)
 
 - tools
   - [aio-drizzle-kit](docs/tools/aio-drizzle-kit/index)

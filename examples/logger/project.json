@@ -1,0 +1,26 @@
+{
+  "name": "logger-demo",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "examples/logger/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "logger-demo:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "logger-demo:build:development"
+        },
+        "production": {
+          "buildTarget": "logger-demo:build:production"
+        }
+      }
+    }
+  }
+}

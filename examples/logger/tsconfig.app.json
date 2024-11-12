@@ -1,0 +1,21 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+    "module": "commonjs",
+    "composite": true,
+    "declaration": true,
+    "types": ["node", "jest"],
+    "emitDecoratorMetadata": true,
+    "target": "es2021",
+    "paths": {
+      "@aiofc/config": ["packages/config/src/index.ts"],
+      "@aiofc/logger": ["packages/logger/src/index.ts"]
+    }
+  },
+  "include": ["src/**/*.ts"],
+  "references": [
+    { "path": "../../packages/config/tsconfig.lib.json" },
+    { "path": "../../packages/logger/tsconfig.lib.json" }
+  ]
+}

@@ -19,7 +19,8 @@
     "sourceMap": true,
     "skipDefaultLibCheck": true,
     "paths": {
-      "@aiofc/config": ["packages/config/src/index.ts"]
+      "@aiofc/config": ["packages/config/src/index.ts"],
+      "@aiofc/logger": ["packages/logger/src/index.ts"]
     }
   }
 }
