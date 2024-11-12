@@ -6,7 +6,7 @@ import { DrizzlePostgresModule } from '@aiofc/postgres-js';
   imports: [
     DrizzlePostgresModule.register({
       postgres: {
-        url: 'postgres://postgres:postgres@localhost:5438/test-db',
+        url: 'postgres://postgres:postgres@localhost:5438/postgres',
       },
       config: { schema: dzSchema },
     }),

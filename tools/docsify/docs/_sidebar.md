@@ -9,7 +9,9 @@
 
 - [安全](docs/config/aiofc-config)
 
-- [数据库](docs/config/aiofc-config)
+- Drizzle
+  - [@aiofc/node-postgres](docs/drizzle/node-postgres)
+  - [@aiofc/postgres-js](docs/drizzle/postgres-js)
 
 - tools
   - [aio-drizzle-kit](docs/tools/aio-drizzle-kit/index)
