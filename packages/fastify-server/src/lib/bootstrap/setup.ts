@@ -29,9 +29,9 @@ function applyExpressCompatibility(fastifyInstance: FastifyInstance) {
   // this is a recommendation from fastify to improve compatibility with express middlewares
   fastifyInstance
     .addHook('onRequest', async (req) => {
-      // TODO: 根据当前运行环境动态设置请求的加密状态，以确保在生产环境中使用加密连接
-      req.socket['encrypted'] = true;
-      // req.socket['encrypted'] = process.env.NODE_ENV === 'production';
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      req.socket['encrypted'] = process.env.NODE_ENV === 'production';
     })
     .decorateReply(
       'setHeader',
@@ -55,7 +55,7 @@ export function initialize(
 ) {
   app.useLogger(logger);
   app.flushLogs(); // 刷新日志：将内存中的日志数据写入到持久存储（如文件或数据库）中
-  app.setGlobalPrefix(config.prefix);
+  app.setGlobalPrefix(config.prefix||'api');
   // 启用跨域请求
   app.enableCors(config.cors);
   // 用于启用 API 版本控制。这里使用了 URI 版本控制策略。

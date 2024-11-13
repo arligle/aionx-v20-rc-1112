@@ -1,0 +1,27 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+    "declaration": true,
+    "composite": true,
+    "types": ["node"],
+    "target": "es2021",
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "strictBindCallApply": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "@aiofc/config": ["packages/config/src/index.ts"],
+      "@aiofc/drizzle-core": ["packages/drizzle-core/src/index.ts"],
+      "@aiofc/fastify-server": ["packages/fastify-server/src/index.ts"],
+      "@aiofc/logger": ["packages/logger/src/index.ts"],
+      "@aiofc/postgres-js": ["packages/postgres-js/src/index.ts"]
+    }
+  },
+  "include": ["src/**/*.ts"],
+  "references": [
+    { "path": "../config/tsconfig.lib.json" },
+    { "path": "../logger/tsconfig.lib.json" }
+  ]
+}
