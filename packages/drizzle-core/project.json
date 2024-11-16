@@ -1,0 +1,33 @@
+{
+  "name": "drizzle-core",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/drizzle-core/src",
+  "projectType": "library",
+  "release": {
+    "version": {
+      "generatorOptions": {
+        "packageRoot": "dist/{projectRoot}",
+        "currentVersionResolver": "git-tag"
+      }
+    }
+  },
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/drizzle-core",
+        "tsConfig": "packages/drizzle-core/tsconfig.lib.json",
+        "packageJson": "packages/drizzle-core/package.json",
+        "main": "packages/drizzle-core/src/index.ts",
+        "assets": ["packages/drizzle-core/*.md"]
+      }
+    },
+    "nx-release-publish": {
+      "options": {
+        "packageRoot": "dist/{projectRoot}"
+      }
+    }
+  }
+}

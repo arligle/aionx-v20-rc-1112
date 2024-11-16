@@ -4,7 +4,7 @@ import { getExistingFilePaths } from './utils/get-existing-file-paths';
 import type { DynamicModule, Type } from '@nestjs/common';
 import { fileLoader, TypedConfigModule } from '../core';
 
-export function setupYamlBaseConfigModule(
+export function configModuleForRoot(
   baseDir: string,
   rootSchemaClass: Type<unknown>,
   options?: SetupConfigOptions,

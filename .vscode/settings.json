@@ -1,8 +1,10 @@
 {
   "cSpell.words": [
     "aiofc",
+    "aiokit",
     "Buildable",
     "commitlint",
+    "Configer",
     "devkit",
     "Fastify",
     "frompairs",
@@ -11,11 +13,16 @@
     "Kamil",
     "Middie",
     "Mysliwiec",
+    "neondatabase",
     "opencollective",
+    "pgadmin",
+    "pgadminer",
     "pino",
     "possibilty",
     "resoures",
+    "softkit",
     "typecheck",
+    "webp",
     "websockets"
   ]
 }

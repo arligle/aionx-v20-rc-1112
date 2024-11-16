@@ -21,6 +21,12 @@
           "buildTarget": "demo:build:production"
         }
       }
+    },
+     "start-debug": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "nx serve demo"
+      }
     }
   }
 }

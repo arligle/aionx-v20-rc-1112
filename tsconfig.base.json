@@ -10,7 +10,6 @@
     "skipLibCheck": true,
     "types": ["node"],
     "lib": ["ES2022", "DOM"],
-    "declaration": false,
     "resolveJsonModule": true,
     "baseUrl": ".",
     "rootDir": ".",
@@ -20,7 +19,11 @@
     "skipDefaultLibCheck": true,
     "paths": {
       "@aiofc/config": ["packages/config/src/index.ts"],
-      "@aiofc/logger": ["packages/logger/src/index.ts"]
+      "@aiofc/drizzle-core": ["packages/drizzle-core/src/index.ts"],
+      "@aiofc/fastify-server": ["packages/fastify-server/src/index.ts"],
+      "@aiofc/logger": ["packages/logger/src/index.ts"],
+      "@aiofc/node-postgres": ["packages/node-postgres/src/index.ts"],
+      "@aiofc/postgres-js": ["packages/postgres-js/src/index.ts"]
     }
   }
 }

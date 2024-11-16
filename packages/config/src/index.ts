@@ -1,4 +1,4 @@
 export * from './lib/constants';
-export * from './lib/yaml-config-module';
+export * from './lib/setup';
 export * from './core';
 export * from './lib/validator';

@@ -2,12 +2,66 @@
   "name": "@aionx/source",
   "$schema": "packages/nx/schemas/project-schema.json",
   "targets": {
-    "local-registry": {
-      "executor": "@nx/js:verdaccio",
+    // "local-registry": {
+    //   "executor": "@nx/js:verdaccio",
+    //   "options": {
+    //     "port": 4873,
+    //     "config": ".verdaccio/config.yml",
+    //     "storage": "tmp/local-registry/storage"
+    //   }
+    // },
+    // "prebuild": {
+    //   "executor": "nx:run-commands",
+    //   "options": {
+    //     "command": "rimraf dist"
+    //   }
+    // },
+    // "test:all": {
+    //   "executor": "nx:run-commands",
+    //   "options": {
+    //     "command": "nx affected:test --all --codeCoverage --skip-nx-cache"
+    //   }
+    // },
+    // "prepare": {
+    //   "executor": "nx:run-commands",
+    //   "options": {
+    //     "command": "husky install"
+    //   }
+    // },
+    "sherif:ws": {
+      "executor": "nx:run-commands",
       "options": {
-        "port": 4873,
-        "config": ".verdaccio/config.yml",
-        "storage": "tmp/local-registry/storage"
+        "command": "pnpm dlx sherif@latest"
+      }
+    },
+    "sherif:ws-fix": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm dlx sherif@latest --fix"
+      }
+    },
+    "clean": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "git clean -xdf node_modules"
+      }
+    },
+    "clean-all": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm run clean && pnpm recursive exec rm -rf node_modules"
+      }
+    },
+    "nx-show-project": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm nx show project @aionx/source --web"
+      }
+    },
+    "nx-graph": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm nx graph"
       }
     }
   }

@@ -1,0 +1,25 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+    "module": "commonjs",
+    "sourceMap": true,
+    "types": ["node", "jest"],
+    "emitDecoratorMetadata": true,
+    "target": "es2021",
+    "paths": {
+      "@aiofc/config": ["packages/config/src/index.ts"],
+      "@aiofc/drizzle-core": ["packages/drizzle-core/src/index.ts"],
+      "@aiofc/fastify-server": ["packages/fastify-server/src/index.ts"],
+      "@aiofc/logger": ["packages/logger/src/index.ts"],
+      "@aiofc/node-postgres": ["packages/node-postgres/src/index.ts"],
+      "@aiofc/postgres-js": ["packages/postgres-js/src/index.ts"]
+    }
+  },
+  "include": ["src/**/*.ts"],
+  "references": [
+    { "path": "../../packages/fastify-server/tsconfig.lib.json" },
+    { "path": "../../packages/logger/tsconfig.lib.json" },
+    { "path": "../../packages/config/tsconfig.lib.json" }
+  ]
+}

@@ -14,6 +14,8 @@ async function bootstrap() {
     // 设置为 true 时，日志消息将被暂时存储（缓冲）而不是立即输出。
     { bufferLogs: true }
   );
+  app.flushLogs(); // 刷新日志：将内存中的日志数据写入到持久存储（如文件或数据库）中
+
   const logger = app.get(Logger);
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);

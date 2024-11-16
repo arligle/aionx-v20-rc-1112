@@ -1,0 +1,26 @@
+{
+  "name": "postgres-js-demo",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "examples/postgres-js/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "postgres-js-demo:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "postgres-js-demo:build:development"
+        },
+        "production": {
+          "buildTarget": "postgres-js-demo:build:production"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+  },
+  "files": [],
+  "include": [],
+  "references": [
+    { "path": "../../packages/postgres-js" },
+    { "path": "../../packages/drizzle-core" },
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.spec.json" }
+  ]
+}

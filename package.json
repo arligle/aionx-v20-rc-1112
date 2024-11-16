@@ -9,15 +9,8 @@
     "pnpm": "9.3.0"
   },
   "scripts": {
-    "prebuild": "rimraf dist",
-    "test:all": "nx affected:test --all --codeCoverage --skip-nx-cache",
     "prepare": "husky install",
-    "sherif:ws": "pnpm dlx sherif@latest",
-    "sherif:ws-fix": "pnpm dlx sherif@latest --fix",
-    "clean": "git clean -xdf node_modules",
-    "clean-all": "pnpm run clean && pnpm recursive exec rm -rf node_modules",
-    "nx-show-project": "pnpm nx show project @aionx/source --web",
-    "nx-graph": "pnpm nx graph"
+    "debug": "nx serve fastify-demo && node dist/examples/fastify/main.js"
   },
   "config": {
     "commitizen": {
@@ -51,9 +44,11 @@
     "@types/lodash.frompairs": "^4.0.9",
     "@types/lodash.merge": "^4.6.9",
     "@types/node": "~18.16.9",
+    "@types/pg": "^8.11.10",
     "@types/set-value": "^4.0.3",
     "commitizen": "^4.3.1",
     "cz-customizable": "^7.2.1",
+    "drizzle-kit": "^0.21.4",
     "eslint": "^9.8.0",
     "eslint-config-prettier": "^9.0.0",
     "husky": "^8.0.0",
@@ -71,25 +66,40 @@
   },
   "dependencies": {
     "@aiofc/config": "workspace:*",
+    "@aiofc/drizzle-core": "workspace:*",
+    "@aiofc/fastify-server": "workspace:*",
+    "@aiofc/logger": "workspace:*",
+    "@aiofc/postgres-js": "workspace:*",
+    "@fastify/helmet": "^11.0.0",
     "@nestjs/axios": "3.1.1",
     "@nestjs/common": "^10.0.2",
     "@nestjs/core": "^10.0.2",
     "@nestjs/platform-express": "^10.0.2",
+    "@nestjs/platform-fastify": "^10.4.7",
+    "@nestjs/swagger": "^8.0.5",
+    "argon2": "^0.41.1",
     "axios": "1.7.7",
     "chalk": "4.1.2",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
     "cosmiconfig": "^9.0.0",
     "debug": "^4.3.7",
+    "drizzle-orm": "^0.29.5",
     "express": "^4.21.1",
+    "fastify": "4.28.1",
+    "hbs": "^4.2.0",
     "lodash.frompairs": "4.0.1",
     "lodash.merge": "4.6.2",
+    "nanoid": "3.3.7",
     "nestjs-cls": "^4.4.1",
+    "pg": "^8.13.1",
     "pino": "^9.5.0",
     "pino-http": "^10.3.0",
     "pino-pretty": "^13.0.0",
+    "postgres": "^3.4.5",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.0",
-    "set-value": "4.1.0"
+    "set-value": "4.1.0",
+    "sql-formatter": "^15.4.5"
   }
 }

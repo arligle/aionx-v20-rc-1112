@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+    "module": "commonjs",
+    "types": ["node", "jest"],
+    "emitDecoratorMetadata": true,
+    "sourceMap": true,
+    "target": "es2021"
+  },
+  "include": ["src/**/*.ts"],
+  "references": [
+    { "path": "../../packages/logger/tsconfig.lib.json" },
+    { "path": "../../packages/config/tsconfig.lib.json" }
+  ]
+}
