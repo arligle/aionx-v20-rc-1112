@@ -3,8 +3,7 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "module": "commonjs",
-    "composite": true,
-    "declaration": true,
+    "sourceMap": true,
     "types": ["node", "jest"],
     "emitDecoratorMetadata": true,
     "target": "es2021",

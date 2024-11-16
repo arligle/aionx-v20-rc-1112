@@ -11,7 +11,10 @@ export async function fastifyBootstrap(module: any) {
     module,
     createFastifyInstance(),
     // 设置为 true 时，日志消息将被暂时存储（缓冲）而不是立即输出。
-    { bufferLogs: true }
+    { bufferLogs: true,
+      // TODO: 在express 设置为 false 时，将关闭请求的日志记录。但是，在fastify不起作用，我也不知道为什么
+      // logger: false
+    }
   );
   useContainer(app.select(module), { fallbackOnErrors: true });
 

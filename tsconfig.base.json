@@ -10,7 +10,6 @@
     "skipLibCheck": true,
     "types": ["node"],
     "lib": ["ES2022", "DOM"],
-    "declaration": false,
     "resolveJsonModule": true,
     "baseUrl": ".",
     "rootDir": ".",

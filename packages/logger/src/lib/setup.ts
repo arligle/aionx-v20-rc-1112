@@ -5,7 +5,7 @@ import { LoggerConfig } from './config/logger';
 import { DynamicModule } from '@nestjs/common';
 import { LoggerModule } from './core/LoggerModule';
 
-export function setupLoggerModule<ClsType extends ClsStore>(
+export function loggerModuleForRootAsync<ClsType extends ClsStore>(
   customProps: (
     req: IncomingMessage,
     res: ServerResponse<IncomingMessage>,

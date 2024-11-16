@@ -1,7 +1,7 @@
 import postgres from 'postgres';
 import { DrizzlePostgresOptions } from './postgres-js.options';
 import { drizzle } from 'drizzle-orm/postgres-js';
-import { Injectable, Logger } from '@nestjs/common';
+import { Injectable, Logger} from '@nestjs/common';
 import { format } from 'sql-formatter';
 
 @Injectable()

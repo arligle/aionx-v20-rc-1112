@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true
+  },
+  "files": [],
+  "include": [],
+  "references": [
+    { "path": "../../packages/fastify-server" },
+    { "path": "../../packages/postgres-js" },
+    { "path": "../../packages/drizzle-core" },
+    { "path": "../../packages/logger" },
+    { "path": "../../packages/config" },
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.spec.json" }
+  ]
+}

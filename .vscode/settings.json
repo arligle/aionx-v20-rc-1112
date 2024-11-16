@@ -4,6 +4,7 @@
     "aiokit",
     "Buildable",
     "commitlint",
+    "Configer",
     "devkit",
     "Fastify",
     "frompairs",

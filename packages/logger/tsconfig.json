@@ -2,6 +2,8 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "composite": true,
     "strict": true,
 
     "noImplicitOverride": true,

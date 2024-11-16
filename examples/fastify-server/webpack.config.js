@@ -5,6 +5,7 @@ module.exports = {
   output: {
     path: join(__dirname, '../../dist/examples/fastify-server'),
   },
+  devtool: 'source-map',
   plugins: [
     new NxAppWebpackPlugin({
       target: 'node',

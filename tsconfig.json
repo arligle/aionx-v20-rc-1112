@@ -2,5 +2,21 @@
   "extends": "./tsconfig.base.json",
   "compileOnSave": false,
   "files": [],
-  "references": []
+  "references": [
+    { "path": "./packages/postgres-js" },
+    { "path": "./packages/fastify-server" },
+    { "path": "./examples/fastify-server" },
+    { "path": "./packages/node-postgres" },
+    { "path": "./packages/drizzle-core" },
+    { "path": "./examples/drizzle-kits" },
+    { "path": "./examples/postgres-js" },
+    { "path": "./examples/hello-word" },
+    { "path": "./examples/fastify" },
+    { "path": "./packages/config" },
+    { "path": "./examples/config" },
+    { "path": "./packages/logger" },
+    { "path": "./examples/logger" },
+    { "path": "./apps/pgadmin" },
+    { "path": "./apps/demo" }
+  ]
 }

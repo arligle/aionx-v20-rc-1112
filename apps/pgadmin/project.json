@@ -1,0 +1,62 @@
+{
+  "name": "pgadmin",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/pgadmin/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    // "migrate": {
+    //   "executor": "nx:run-commands",
+    //   "options": {
+    //     "command": "tsx src/node-postgres-migrate.ts"
+    //   }
+    // },
+    "db:generate": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "drizzle-kit generate --config=apps/pgadmin/drizzle.config.ts"
+      }
+    },
+    "db:studio": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "drizzle-kit studio --config=apps/pgadmin/drizzle.config.ts"
+      }
+    },
+    "db:migrate": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "drizzle-kit migrate --config=apps/pgadmin/drizzle.config.ts"
+      }
+    },
+    "db:introspect": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "drizzle-kit introspect --config=apps/pgadmin/drizzle.config.ts"
+      }
+    },
+    "swagger": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node -r @swc-node/register ./apps/pgadmin/src/utils/swagger"
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "pgadmin:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "pgadmin:build:development"
+        },
+        "production": {
+          "buildTarget": "pgadmin:build:production"
+        }
+      }
+    }
+  }
+}

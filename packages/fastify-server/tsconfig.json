@@ -3,6 +3,8 @@
   "compilerOptions": {
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "declaration": true,
+    "composite": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
@@ -11,8 +13,8 @@
   "files": [],
   "include": [],
   "references": [
-    {
-      "path": "./tsconfig.lib.json"
-    }
+    { "path": "../config" },
+    { "path": "../logger" },
+    { "path": "./tsconfig.lib.json" }
   ]
 }

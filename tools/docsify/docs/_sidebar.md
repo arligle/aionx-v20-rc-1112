@@ -1,7 +1,8 @@
 - 概述
   - [说明](docs/summary/index)
   - [参考项目](docs/summary/reference)
-
+- Nx & pnpm
+  - [配置文件](docs/nx/configuration-files)
 
 - [配置](docs/config/aiofc-config)
 
