@@ -25,7 +25,8 @@
       "@aiofc/i18n": ["packages/i18n/src/index.ts"],
       "@aiofc/logger": ["packages/logger/src/index.ts"],
       "@aiofc/node-postgres": ["packages/node-postgres/src/index.ts"],
-      "@aiofc/postgres-js": ["packages/postgres-js/src/index.ts"]
+      "@aiofc/postgres-js": ["packages/postgres-js/src/index.ts"],
+      "@aiofc/validation": ["packages/validation/src/index.ts"]
     }
   }
 }

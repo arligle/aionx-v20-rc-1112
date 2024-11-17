@@ -50,6 +50,7 @@
     "@types/pg": "^8.11.10",
     "@types/set-value": "^4.0.3",
     "@types/string-format": "^2.0.3",
+    "@types/validator": "^13.12.2",
     "@types/yargs": "^17.0.33",
     "commitizen": "^4.3.1",
     "cz-customizable": "^7.2.1",
@@ -70,11 +71,12 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "@aiofc/exceptions": "workspace:*",
-    "@aiofc/i18n": "workspace:*",
     "@aiofc/config": "workspace:*",
+    "@aiofc/validation":"workspace:*",
     "@aiofc/drizzle-core": "workspace:*",
+    "@aiofc/exceptions": "workspace:*",
     "@aiofc/fastify-server": "workspace:*",
+    "@aiofc/i18n": "workspace:*",
     "@aiofc/logger": "workspace:*",
     "@aiofc/postgres-js": "workspace:*",
     "@fastify/helmet": "^11.0.0",
@@ -118,6 +120,7 @@
     "set-value": "4.1.0",
     "sql-formatter": "^15.4.5",
     "string-format": "^2.0.0",
+    "validator": "13.12.0",
     "yargs": "^17.7.2"
   }
 }

@@ -5,7 +5,7 @@ import {
   IsOptional,
   IsString,
 } from 'class-validator';
-// import { BooleanType } from '@aiokit/validation';
+// import { BooleanType } from '@aiofc/validation';
 
 export class CorsConfig {
   @IsArray()

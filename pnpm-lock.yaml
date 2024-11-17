@@ -14,6 +14,9 @@ importers:
       '@aiofc/drizzle-core':
         specifier: workspace:*
         version: link:packages/drizzle-core
+      '@aiofc/exceptions':
+        specifier: workspace:*
+        version: link:packages/exceptions
       '@aiofc/fastify-server':
         specifier: workspace:*
         version: link:packages/fastify-server
@@ -149,6 +152,9 @@ importers:
       string-format:
         specifier: ^2.0.0
         version: 2.0.0
+      validator:
+        specifier: 13.12.0
+        version: 13.12.0
       yargs:
         specifier: ^17.7.2
         version: 17.7.2
@@ -252,6 +258,9 @@ importers:
       '@types/string-format':
         specifier: ^2.0.3
         version: 2.0.3
+      '@types/validator':
+        specifier: ^13.12.2
+        version: 13.12.2
       '@types/yargs':
         specifier: ^17.0.33
         version: 17.0.33
@@ -533,6 +542,30 @@ importers:
       tslib:
         specifier: ^2.3.0
         version: 2.8.1
+
+  packages/validation:
+    dependencies:
+      '@aiofc/exceptions':
+        specifier: workspace:*
+        version: link:../exceptions
+      '@aiofc/i18n':
+        specifier: workspace:*
+        version: link:../i18n
+      '@nestjs/common':
+        specifier: ^10.0.2
+        version: 10.4.7(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.1.14)(rxjs@7.8.1)
+      class-transformer:
+        specifier: ^0.5.1
+        version: 0.5.1
+      class-validator:
+        specifier: ^0.14.1
+        version: 0.14.1
+      tslib:
+        specifier: ^2.3.0
+        version: 2.8.1
+      validator:
+        specifier: 13.12.0
+        version: 13.12.0
 
   tools/docsify:
     devDependencies:
