@@ -15,6 +15,7 @@
     { "path": "./packages/logger" },
     { "path": "./apps/pgadmin" },
     { "path": "./packages/i18n" },
-    { "path": "./packages/exceptions" }
+    { "path": "./packages/exceptions" },
+    { "path": "./packages/validation" }
   ]
 }

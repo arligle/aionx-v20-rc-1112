@@ -74,6 +74,32 @@ export function validateAndThrow<T, E>(
 
 /**
  * @return error or undefined if valid
+示例：
+const exampleValidatorDefinition = {
+  name: 'exampleValidator',
+  defaultValidationMessage: 'Value is invalid',
+  validator: (value: string, constraint: number) => value.length <= constraint,
+  decorator: (options: number, validationOptions?: ValidationOptions) => {
+    // ...decorator implementation...
+    return () => {};
+  },
+};
+
+const fieldName = 'exampleField';
+const value = 'exampleValue';
+const constraint = 10;
+const overrideDefaultMessage = 'Value exceeds maximum length';
+const args = {};
+
+const error = validateAndReturnError(
+  exampleValidatorDefinition,
+  fieldName,
+  value,
+  constraint,
+  overrideDefaultMessage,
+  args,
+);
+console.log(error);
  * */
 export function validateAndReturnError<T, E>(
   validatorDefinition: IValidatorDefinition<T, E>,
@@ -82,7 +108,7 @@ export function validateAndReturnError<T, E>(
   constraint?: E,
   overrideDefaultMessage?: Path<I18nTranslations>,
   args?: unknown,
-) {
+): I18nValidationError | undefined {
   const isValid = validatorDefinition.validator(value, constraint as E);
 
   return isValid
@@ -116,3 +142,4 @@ function throwValidationException<T, E>(
 
   throw new GeneralBadRequestException(validationError);
 }
+

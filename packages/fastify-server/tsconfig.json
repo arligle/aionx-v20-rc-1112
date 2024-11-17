@@ -13,6 +13,7 @@
   "files": [],
   "include": [],
   "references": [
+    { "path": "../validation" },
     { "path": "../i18n" },
     { "path": "../exceptions" },
     { "path": "../config" },
