@@ -30,6 +30,7 @@
       "@aiofc/persistence-api": ["packages/persistence-api/src/index.ts"],
       "@aiofc/postgres-js": ["packages/postgres-js/src/index.ts"],
       "@aiofc/service-api": ["packages/service-api/src/index.ts"],
+      "@aiofc/typeorm": ["packages/typeorm/src/index.ts"],
       "@aiofc/utils": ["packages/utils/src/index.ts"],
       "@aiofc/validation": ["packages/validation/src/index.ts"]
     }

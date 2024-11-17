@@ -1,0 +1,25 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "composite": true,
+    "declaration": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noPropertyAccessFromIndexSignature": true
+  },
+  "files": [],
+  "include": [],
+  "references": [
+    { "path": "../utils" },
+    { "path": "../config" },
+    { "path": "../common-types" },
+    { "path": "../persistence-api" },
+    { "path": "../exceptions" },
+    { "path": "../i18n" },
+    { "path": "../validation" },
+    { "path": "./tsconfig.lib.json" }
+  ]
+}

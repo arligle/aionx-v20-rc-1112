@@ -5,6 +5,7 @@
     "Buildable",
     "commitlint",
     "Configer",
+    "Datasource",
     "devkit",
     "Fastify",
     "frompairs",

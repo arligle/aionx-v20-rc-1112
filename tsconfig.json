@@ -22,6 +22,7 @@
     { "path": "./packages/node-postgres" },
     { "path": "./packages/common-types" },
     { "path": "./packages/service-api" },
-    { "path": "./packages/utils" }
+    { "path": "./packages/utils" },
+    { "path": "./packages/typeorm" }
   ]
 }

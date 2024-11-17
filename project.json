@@ -2,40 +2,10 @@
   "name": "@aionx/source",
   "$schema": "packages/nx/schemas/project-schema.json",
   "targets": {
-    "sherif:ws": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "pnpm dlx sherif@latest"
-      }
-    },
-    "sherif:ws-fix": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "pnpm dlx sherif@latest --fix"
-      }
-    },
-    "clean": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "git clean -xdf node_modules"
-      }
-    },
-    "clean-all": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "pnpm run clean && pnpm recursive exec rm -rf node_modules"
-      }
-    },
     "nx-show-project": {
       "executor": "nx:run-commands",
       "options": {
         "command": "pnpm nx show project @aionx/source --web"
-      }
-    },
-    "nx-graph": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "pnpm nx graph"
       }
     },
     "local-registry": {
