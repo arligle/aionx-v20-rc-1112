@@ -90,7 +90,12 @@ export function loggerModuleForRootAsync<ClsType extends ClsStore>(
           level: loggerConfig.defaultLevel,
           // install 'pino-pretty' package in order to use the following option
           transport: loggerConfig.prettyLogs
-            ? { target: 'pino-pretty' }
+            ? { target: 'pino-pretty',
+              options: {
+                colorize: loggerConfig.colorize,
+                // ignore: 'pid,hostname',
+              },
+             }
             : undefined,
         },
       };

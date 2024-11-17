@@ -8,6 +8,7 @@
   ],
   "compilerOptions": {
     "esModuleInterop": true,
-    "declaration": true
+    "declaration": true,
+    "composite": true
   }
 }

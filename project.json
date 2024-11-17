@@ -2,32 +2,6 @@
   "name": "@aionx/source",
   "$schema": "packages/nx/schemas/project-schema.json",
   "targets": {
-    // "local-registry": {
-    //   "executor": "@nx/js:verdaccio",
-    //   "options": {
-    //     "port": 4873,
-    //     "config": ".verdaccio/config.yml",
-    //     "storage": "tmp/local-registry/storage"
-    //   }
-    // },
-    // "prebuild": {
-    //   "executor": "nx:run-commands",
-    //   "options": {
-    //     "command": "rimraf dist"
-    //   }
-    // },
-    // "test:all": {
-    //   "executor": "nx:run-commands",
-    //   "options": {
-    //     "command": "nx affected:test --all --codeCoverage --skip-nx-cache"
-    //   }
-    // },
-    // "prepare": {
-    //   "executor": "nx:run-commands",
-    //   "options": {
-    //     "command": "husky install"
-    //   }
-    // },
     "sherif:ws": {
       "executor": "nx:run-commands",
       "options": {
@@ -62,6 +36,14 @@
       "executor": "nx:run-commands",
       "options": {
         "command": "pnpm nx graph"
+      }
+    },
+    "local-registry": {
+      "executor": "@nx/js:verdaccio",
+      "options": {
+        "port": 4873,
+        "config": ".verdaccio/config.yml",
+        "storage": "tmp/local-registry/storage"
       }
     }
   }
