@@ -7,6 +7,6 @@ Used mostly in auto-generated code.
 ## Installation
 
 ```bash
-yard add @aiokit/common-types
+yard add @aiofc/common-types
 ```
 

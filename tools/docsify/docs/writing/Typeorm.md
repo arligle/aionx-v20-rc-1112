@@ -17,7 +17,7 @@ It can be useful outside Softkit ecosystem
 ## Installation
 
 ```bash
-yarn add @aiokit/typeorm
+yarn add @aiofc/typeorm
 ```
 
 ## Usage
@@ -25,7 +25,7 @@ yarn add @aiokit/typeorm
 ### Add default configuration in your root config class
 
 ```typescript
-import { DbConfig } from '@aiokit/typeorm';
+import { DbConfig } from '@aiofc/typeorm';
 
 export class RootConfig {
   @Type(() => DbConfig)
@@ -54,7 +54,7 @@ db:
 ### Add setup and entities to your main app module
 
 ```typescript
-import { setupTypeormModule } from '@aiokit/typeorm';
+import { setupTypeormModule } from '@aiofc/typeorm';
 import * as Entities from './database/entities';
 
 @Module({

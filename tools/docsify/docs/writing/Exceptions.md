@@ -16,10 +16,10 @@ It can be used outside Softkit projects
 ## Installation
 
 ```bash
-yarn add @aiokit/exceptions
+yarn add @aiofc/exceptions
 ```
 
-You can also use [@aiokit/bootstrap](https://www.npmjs.com/package/@aiokit/bootstrap) to bootstrap your app with all default interceptors and filters.
+You can also use [@aiofc/bootstrap](https://www.npmjs.com/package/@aiofc/bootstrap) to bootstrap your app with all default interceptors and filters.
 
 This library is also tight to [nestjs-i18n](https://www.npmjs.com/package/nestjs-i18n), this allows us to easily change default messaging for the library or if you are ok with what we have just use default (*only english is available*)
 
@@ -42,7 +42,7 @@ This library is also tight to [nestjs-i18n](https://www.npmjs.com/package/nestjs
 ### You can create your own exception it will be handled by default interceptor, and returned in a unified format. See ErrorResponse class.
 
 ```typescript
-import { AbstractHttpException } from '@aiokit/exceptions';
+import { AbstractHttpException } from '@aiofc/exceptions';
 
 export class YourException extends AbstractHttpException {
   constructor(rootCause?: unknown) {
