@@ -30,7 +30,7 @@ Note:
 ## Installation
 
 ```bash
-yarn add @aiokit/server-http-client
+yarn add @aiofc/server-http-client
 ```
 
 ---

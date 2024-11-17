@@ -71,14 +71,17 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
+    "@aiofc/async-storage": "workspace:*",
+    "@aiofc/common-types": "workspace:*",
     "@aiofc/config": "workspace:*",
-    "@aiofc/validation":"workspace:*",
     "@aiofc/drizzle-core": "workspace:*",
     "@aiofc/exceptions": "workspace:*",
     "@aiofc/fastify-server": "workspace:*",
     "@aiofc/i18n": "workspace:*",
     "@aiofc/logger": "workspace:*",
+    "@aiofc/persistence-api": "workspace:*",
     "@aiofc/postgres-js": "workspace:*",
+    "@aiofc/validation": "workspace:*",
     "@fastify/helmet": "^11.0.0",
     "@grpc/grpc-js": "^1.12.2",
     "@nestjs/axios": "3.1.1",
@@ -110,6 +113,7 @@
     "mergician": "^2.0.2",
     "nanoid": "3.3.7",
     "nestjs-cls": "^4.4.1",
+    "nestjs-paginate": "^9.3.1",
     "pg": "^8.13.1",
     "pino": "^9.5.0",
     "pino-http": "^10.3.0",
@@ -120,6 +124,7 @@
     "set-value": "4.1.0",
     "sql-formatter": "^15.4.5",
     "string-format": "^2.0.0",
+    "typeorm-transactional": "^0.5.0",
     "validator": "13.12.0",
     "yargs": "^17.7.2"
   }

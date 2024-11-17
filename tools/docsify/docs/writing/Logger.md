@@ -14,7 +14,7 @@
 ## Installation
 
 ```bash
-yarn add @aiokit/logger
+yarn add @aiofc/logger
 ```
 
 ## Usage
@@ -28,7 +28,7 @@ yarn add @aiokit/logger
 
 ```typescript
 
-import { setupLoggerModule } from '@aiokit/logger';
+import { setupLoggerModule } from '@aiofc/logger';
 
 @Module({
   imports: [

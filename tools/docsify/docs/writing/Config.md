@@ -12,7 +12,7 @@
 ## Installation
 
 ```bash
-yarn add @aiokit/config
+yarn add @aiofc/config
 ```
 
 ---
@@ -20,7 +20,7 @@ yarn add @aiokit/config
 ## Usage
 
 ```typescript
-import { setupYamlBaseConfigModule } from '@aiokit/config';
+import { setupYamlBaseConfigModule } from '@aiofc/config';
 
 
 @Module({
@@ -77,7 +77,7 @@ export class YourAppModule {}
     - Example in your library:
       ```typescript
       import { Inject, Injectable } from '@nestjs/common';
-      import { ROOT_CONFIG_ALIAS_TOKEN, RootConfig } from '@aiokit/config';
+      import { ROOT_CONFIG_ALIAS_TOKEN, RootConfig } from '@aiofc/config';
       import { YourConfigInterface } from './your-config.interface';
 
       @Injectable()

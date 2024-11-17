@@ -5,5 +5,5 @@ It a simple library that provides some useful string functions, for URLs and cas
 ## Installation
 
 ```bash
-yarn add @aiokit/string-utils
+yarn add @aiofc/string-utils
 ```

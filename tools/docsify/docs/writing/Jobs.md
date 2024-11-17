@@ -43,7 +43,7 @@ We do support 3 types of jobs:
 ## Installation
 
 ```bash
-yarn add @aiokit/jobs @nestjs/bullmq @anchan828/nest-redlock bullmq
+yarn add @aiofc/jobs @nestjs/bullmq @anchan828/nest-redlock bullmq
 ```
 
 ## Setup
@@ -51,7 +51,7 @@ yarn add @aiokit/jobs @nestjs/bullmq @anchan828/nest-redlock bullmq
 ### Add default configuration in your root config class
 
 ```typescript
-import { JobsConfig } from '@aiokit/jobs';
+import { JobsConfig } from '@aiofc/jobs';
 
 export class RootConfig {
   @ValidateNested()
@@ -99,7 +99,7 @@ jobsConfig:
 ### Add library entities to your index.ts export that has all entity, `index.ts` file
 
 ```typescript
-export { JobDefinition, JobExecution, JobVersion } from '@aiokit/jobs';
+export { JobDefinition, JobExecution, JobVersion } from '@aiofc/jobs';
 ```
 
 ### Generate migration for jobs entities
@@ -153,7 +153,7 @@ export class BusyJob extends JobProcessor<BusyJobData> {
 
 ```typescript
 import { Module } from '@nestjs/common';
-import { JobsModule, JobsConfig } from '@aiokit/jobs';
+import { JobsModule, JobsConfig } from '@aiofc/jobs';
 import * as Jobs from './jobs';
 
 @Module({

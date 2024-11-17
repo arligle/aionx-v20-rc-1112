@@ -6,7 +6,7 @@
 - class-validator is a nice library, but it's not actively supported anymore, and we consider forking it and maintaining it by ourselves.
 - there are plenty of alternatives for class-validator, but it is the most convenient one that we've ever used, and a lot of other libraries are using it as well. So having a single validator for everything is a good idea.
 - class-validator stopped supporting dynamic validation schema, and in this library we implemented it for our needs and with our structures
-- we also tight it with [nestjs-i18n](https://www.npmjs.com/package/@aiokit/i18n), so we can easily override default translations
+- we also tight it with [nestjs-i18n](https://www.npmjs.com/package/@aiofc/i18n), so we can easily override default translations
 - also we're providing better transformers for types like date and boolean, default class-validator transformers are not working properly with these and other types
 - providing additional useful decorators like `@Match`, to check if one field match another, and other commonly requested decorators that missed in class-validator, or proper @IsEmailLocalized validator and they are localized
 
@@ -16,7 +16,7 @@
 ### Installation
 
 ```bash
-yarn add @aiokit/validation
+yarn add @aiofc/validation
 ```
 
 ### Usage
@@ -28,7 +28,7 @@ Usage is as simple as with plain [class-validator](https://github.com/typestack/
 - This example will throw the appropriate exception that will be handled by our filter and return RFC7807 error response if value doesn't match validator schema
 
 ```typescript
-import { IsEnumValidatorDefinition, validateAndThrow } from '@aiokit/validators';
+import { IsEnumValidatorDefinition, validateAndThrow } from '@aiofc/validators';
 
 validateAndThrow(
   IsEnumValidatorDefinition,
@@ -41,7 +41,7 @@ validateAndThrow(
 - This example will throw exception if value doesn't match constraint
 
 ```typescript
-import { MatchesRegexpValidatorDefinition, validateAndThrow } from '@aiokit/validators';
+import { MatchesRegexpValidatorDefinition, validateAndThrow } from '@aiofc/validators';
 
 const constraint = /^-?(?!0\d)\d+$/;
 
@@ -58,7 +58,7 @@ validateAndThrow(
 -- If you don't need to throw exception immediately you can use `validateAndReturnError` method, that returns `ValidationError` object, that you can use later
 
 ```typescript
-import { IsEnumValidatorDefinition, validateAndThrow } from '@aiokit/validators';
+import { IsEnumValidatorDefinition, validateAndThrow } from '@aiofc/validators';
 
 const error = validateAndReturnError(
   IsEnumValidatorDefinition,

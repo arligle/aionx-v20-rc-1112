@@ -2,7 +2,7 @@
 
 This is a wrapper on top of nestjs-swagger library, that provides automatic configuration and config classes to use in your apps.
 
-It's used explicitly in @aiokit/bootstrap library, but you can use it in your apps as well.
+It's used explicitly in @aiofc/bootstrap library, but you can use it in your apps as well.
 
 
 Features:
@@ -13,7 +13,7 @@ Features:
 ## Installation
 
 ```bash
-yarn add @aiokit/swagger-utils
+yarn add @aiofc/swagger-utils
 ```
 
 ## Usage
@@ -39,7 +39,7 @@ const swaggerSetup = setupSwagger(swaggerConfig, app, appPrefix);
 ### Default configuration in your root config class
 
 ```typescript
-import { SwaggerConfig } from '@aiokit/swagger-utils';
+import { SwaggerConfig } from '@aiofc/swagger-utils';
 
 export class RootConfig {
   @Type(() => SwaggerConfig)
@@ -58,7 +58,7 @@ swagger:
   description: 'some useful description'
   version: 1.0.0
   contactName: 'John Doe'
-  contactEmail: 'john.doe@aiokit.dev'
+  contactEmail: 'john.doe@aiofc.dev'
   contactUrl: https://www.softkit.dev/
   servers:
     - { url: 'http://localhost:9999', description: 'local server' }

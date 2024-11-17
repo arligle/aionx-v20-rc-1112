@@ -10,5 +10,5 @@
 ## Installation
 
 ```bash
-yarn add @aiokit/crypto
+yarn add @aiofc/crypto
 ```

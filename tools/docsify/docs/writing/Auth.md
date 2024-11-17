@@ -5,7 +5,7 @@ This library provides a set of general services and utilities for authentication
 ## Installation
 
 ```bash
-yarn add @aiokit/auth
+yarn add @aiofc/auth
 ```
 
 ## Usage

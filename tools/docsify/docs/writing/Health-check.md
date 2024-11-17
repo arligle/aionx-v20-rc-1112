@@ -9,7 +9,7 @@ This module is tight to Softkit ecosystem and there is no point to use it outsid
 ## Installation
 
 ```bash
-yarn add @aiokit/health-check
+yarn add @aiofc/health-check
 ```
 
 ## Usage in your main app module:
@@ -18,7 +18,7 @@ yarn add @aiokit/health-check
 - Import HealthCheckModule and register it in imports array
 - Add HealthConfig to your RootConfig class
 ```typescript
-import { HealthConfig } from '@aiokit/healthcheck';
+import { HealthConfig } from '@aiofc/healthcheck';
 
 export default class RootConfig implements PlatformClientConfig {
 
