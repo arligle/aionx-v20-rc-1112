@@ -70,6 +70,8 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
+    "@aiofc/exceptions": "workspace:*",
+    "@aiofc/i18n": "workspace:*",
     "@aiofc/config": "workspace:*",
     "@aiofc/drizzle-core": "workspace:*",
     "@aiofc/fastify-server": "workspace:*",
@@ -83,7 +85,7 @@
     "@nestjs/graphql": "^12.2.1",
     "@nestjs/platform-express": "^10.0.2",
     "@nestjs/platform-fastify": "^10.4.7",
-    "@nestjs/swagger": "^8.0.5",
+    "@nestjs/swagger": "^7.4.2",
     "accept-language-parser": "^1.5.0",
     "argon2": "^0.41.1",
     "axios": "1.7.7",

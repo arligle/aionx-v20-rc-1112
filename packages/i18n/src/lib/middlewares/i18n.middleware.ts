@@ -22,7 +22,7 @@ import { shouldResolve } from '../utils';
 import { isResolverWithOptions } from '../utils/type-guards';
 
 const ExecutionContextMethodNotImplemented = new I18nError(
-  "Method not implemented. @aiokit/i18n creates a fake Http context since it's using middleware to resolve your language. Nestjs middlewares don't have access to the ExecutionContext.",
+  "Method not implemented. @aiofc/i18n creates a fake Http context since it's using middleware to resolve your language. Nestjs middlewares don't have access to the ExecutionContext.",
 );
 
 @Injectable()

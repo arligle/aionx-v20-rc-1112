@@ -224,7 +224,7 @@ export class I18nModule implements OnModuleInit, NestModule {
   private static createResolverProviders(resolvers?: I18nOptionResolver[]) {
     if (!resolvers || resolvers.length === 0) {
       logger.error(
-        `No resolvers provided! @aiokit/i18n won't work properly, please follow the quick-start guide: https://docs.softkit.dev/libraries/i18n/quick-start`,
+        `No resolvers provided! @aiofc/i18n won't work properly, please follow the quick-start guide: https://docs.softkit.dev/libraries/i18n/quick-start`,
       );
     }
     return (resolvers || [])
