@@ -4,10 +4,20 @@ import {
 } from '@nestjs/platform-fastify';
 import { FastifyInstance } from 'fastify';
 import { generateRandomId } from '../utils/crypto';
-import { VersioningType } from '@nestjs/common';
+import { ClassSerializerInterceptor, INestApplication, VersioningType } from '@nestjs/common';
 import { AppConfig } from '../config/app.config';
-import { Logger } from '@aiofc/logger';
+import { Logger, LoggerErrorInterceptor } from '@aiofc/logger';
 import fastifyHelmet from '@fastify/helmet';
+import { HttpAdapterHost, Reflector } from '@nestjs/core';
+import {
+  AnyExceptionFilter,
+  HttpExceptionFilter,
+  OverrideDefaultForbiddenExceptionFilter,
+  OverrideDefaultNotFoundFilter,
+  responseBodyFormatter,
+} from '@aiofc/exceptions';
+import { I18nValidationExceptionFilter, I18nValidationPipe } from '@aiofc/i18n';
+import { DEFAULT_VALIDATION_OPTIONS } from '@aiofc/validation';
 
 // TODO: FastifyAdapter 是 Fastify 的 NestJS 适配器，它允许我们在 NestJS 应用中使用 Fastify。
 export function createFastifyInstance(): FastifyAdapter {
@@ -46,16 +56,55 @@ function applyExpressCompatibility(fastifyInstance: FastifyInstance) {
       }
     );
 }
+// TODO: 设置全局过滤器
+export function setupGlobalFilters(
+  app: INestApplication,
+  httpAdapterHost: HttpAdapterHost
+) {
+  app.useGlobalFilters(
+    new AnyExceptionFilter(httpAdapterHost as any),
+    new OverrideDefaultNotFoundFilter(httpAdapterHost as any),
+    new OverrideDefaultForbiddenExceptionFilter(httpAdapterHost as any),
+    // todo generalize
+    new HttpExceptionFilter(httpAdapterHost as any),
+    new I18nValidationExceptionFilter({
+      responseBodyFormatter,
+      detailedErrors: true,
+    })
+    // 加入更多的Filter
+    // new PostgresDbQueryFailedErrorFilter(httpAdapterHost as any),
+  );
+}
 
-export function initialize(
+// TODO: 设置全局拦截器
+function setupGlobalInterceptors(app: INestApplication) {
+  // 用于自动序列化和反序列化类实例，确保响应数据符合预期的格式
+  app.useGlobalInterceptors(new ClassSerializerInterceptor(app.get(Reflector)));
+  // 用于捕获和记录应用程序中的错误日志
+  app.useGlobalInterceptors(new LoggerErrorInterceptor());
+}
+
+/**
+ * @description 初始化应用程序
+ * @export
+ * @param app
+ * @param config
+ * @param logger
+ * @param fastifyInstance
+ * @param httpAdapterHost
+ * @return {*}
+ */
+export async function initialize(
   app: NestFastifyApplication,
   config: AppConfig,
   logger: Logger,
-  fastifyInstance: FastifyInstance
+  fastifyInstance: FastifyInstance,
+  httpAdapterHost: HttpAdapterHost
 ) {
+  // 在应用程序时注册全局的日志记录器
   app.useLogger(logger);
   app.flushLogs(); // 刷新日志：将内存中的日志数据写入到持久存储（如文件或数据库）中
-  app.setGlobalPrefix(config.prefix||'api');
+  app.setGlobalPrefix(config.prefix || 'api');
   // 启用跨域请求
   app.enableCors(config.cors);
   // 用于启用 API 版本控制。这里使用了 URI 版本控制策略。
@@ -67,4 +116,35 @@ export function initialize(
   // 提高 Fastify 与 Express 的兼容性
   applyExpressCompatibility(fastifyInstance);
   app.register(fastifyHelmet, {});
+
+   // 在 Fastify 应用实例上注册了一个全局管道，用于处理请求数据的验证。
+  // 并创建了一个 I18nValidationPipe 实例。用于处理国际化（i18n）相关的验证逻辑。
+  app.useGlobalPipes(new I18nValidationPipe(DEFAULT_VALIDATION_OPTIONS));
+  // 所以首先是全局的，然后是缩小的
+  // 确保在应用程序中发生异常时，这些异常会被全局的异常过滤器捕获和处理。
+  setupGlobalFilters(app, httpAdapterHost);
+    // 设置一个全局错误处理器，确保即使在应用程序中发生未捕获的异常时，异常信息也能被记录下来。
+  process.on(
+    'uncaughtException',
+    /* istanbul ignore next */ function (err) {
+      // Handle the error safely
+      logger.error('Uncaught exception: %o', err);
+    },
+  );
+  // 设置一个全局错误处理器，确保即使在应用程序中发生未处理的 Promise 拒绝时，拒绝信息也能被记录下来。
+  process.on(
+    'unhandledRejection',
+    /* istanbul ignore next */ (reason, promise) => {
+      // Handle the error safely
+      logger.error(
+        'Unhandled Rejection at: Promise: %o, reason: %s',
+        promise,
+        reason,
+      );
+    },
+  );
+  // 设置全局拦截器
+  setupGlobalInterceptors(app);
+
+  return app;
 }

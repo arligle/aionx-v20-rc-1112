@@ -18,6 +18,8 @@
   "include": ["src/**/*.ts"],
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"],
   "references": [
+    { "path": "../../packages/i18n/tsconfig.lib.json" },
+    { "path": "../../packages/exceptions/tsconfig.lib.json" },
     { "path": "../../packages/fastify-server/tsconfig.lib.json" },
     { "path": "../../packages/postgres-js/tsconfig.lib.json" },
     { "path": "../../packages/drizzle-core/tsconfig.lib.json" },

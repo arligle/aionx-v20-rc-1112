@@ -3,6 +3,8 @@
   "files": [],
   "include": [],
   "references": [
+    { "path": "../../packages/i18n" },
+    { "path": "../../packages/exceptions" },
     { "path": "../../packages/fastify-server" },
     { "path": "../../packages/logger" },
     { "path": "../../packages/config" },

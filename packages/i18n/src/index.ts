@@ -1,5 +1,5 @@
 export * from './lib/config/i18';
-export * from './lib/setup-i18n-module';
+export * from './lib/setup';
 export * from './lib/utils';
 /* istanbul ignore file */
 export {

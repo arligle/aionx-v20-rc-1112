@@ -19,6 +19,8 @@
   },
   "include": ["src/**/*.ts"],
   "references": [
+    { "path": "../i18n/tsconfig.lib.json" },
+    { "path": "../exceptions/tsconfig.lib.json" },
     { "path": "../config/tsconfig.lib.json" },
     { "path": "../logger/tsconfig.lib.json" }
   ]

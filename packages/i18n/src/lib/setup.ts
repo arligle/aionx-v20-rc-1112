@@ -7,7 +7,7 @@ import { HeaderResolver } from './resolvers';
 /**
  * @link https://github.com/Nikaple/nest-typed-config
  * */
-export function setupI18NModule(
+export function i18nModuleForRootAsync(
   baseDir: string,
   {
     fallbacks = {
