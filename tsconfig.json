@@ -21,6 +21,7 @@
     { "path": "./packages/persistence-api" },
     { "path": "./packages/node-postgres" },
     { "path": "./packages/common-types" },
-    { "path": "./packages/service-api" }
+    { "path": "./packages/service-api" },
+    { "path": "./packages/utils" }
   ]
 }

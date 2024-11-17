@@ -38,6 +38,9 @@ importers:
       '@aiofc/postgres-js':
         specifier: workspace:*
         version: link:packages/postgres-js
+      '@aiofc/utils':
+        specifier: workspace:*
+        version: link:packages/utils
       '@aiofc/validation':
         specifier: workspace:*
         version: link:packages/validation
@@ -641,6 +644,21 @@ importers:
       nestjs-paginate:
         specifier: ^9.3.1
         version: 9.3.1(@nestjs/common@10.4.7(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/swagger@7.4.2(@nestjs/common@10.4.7(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.7)(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2))(express@4.21.1)(fastify@4.28.1)(typeorm@0.3.20(pg@8.13.1)(ts-node@10.9.1(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.20)(typescript@5.5.4)))
+      tslib:
+        specifier: ^2.3.0
+        version: 2.8.1
+      typeorm-transactional:
+        specifier: ^0.5.0
+        version: 0.5.0(reflect-metadata@0.2.2)(typeorm@0.3.20(pg@8.13.1)(ts-node@10.9.1(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.20)(typescript@5.5.4)))
+
+  packages/utils:
+    dependencies:
+      argon2:
+        specifier: ^0.41.1
+        version: 0.41.1
+      nanoid:
+        specifier: 3.3.7
+        version: 3.3.7
       tslib:
         specifier: ^2.3.0
         version: 2.8.1
@@ -16392,6 +16410,14 @@ snapshots:
       '@types/cls-hooked': 4.3.9
       cls-hooked: 4.2.2
       reflect-metadata: 0.1.14
+      semver: 7.6.3
+      typeorm: 0.3.20(pg@8.13.1)(ts-node@10.9.1(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.20)(typescript@5.5.4))
+
+  typeorm-transactional@0.5.0(reflect-metadata@0.2.2)(typeorm@0.3.20(pg@8.13.1)(ts-node@10.9.1(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.20)(typescript@5.5.4))):
+    dependencies:
+      '@types/cls-hooked': 4.3.9
+      cls-hooked: 4.2.2
+      reflect-metadata: 0.2.2
       semver: 7.6.3
       typeorm: 0.3.20(pg@8.13.1)(ts-node@10.9.1(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.20)(typescript@5.5.4))
 

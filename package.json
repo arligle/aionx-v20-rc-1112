@@ -72,6 +72,7 @@
   },
   "dependencies": {
     "@aiofc/async-storage": "workspace:*",
+    "@aiofc/utils":"workspace:*",
     "@aiofc/common-types": "workspace:*",
     "@aiofc/config": "workspace:*",
     "@aiofc/drizzle-core": "workspace:*",
