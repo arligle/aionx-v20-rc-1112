@@ -36,7 +36,7 @@ async function bootstrap() {
 }
 
 const appDir = path.join(sourceDir, 'app');
-
+// TODO: 这里的路径定义必须在具体的应用中遵循，否则会导致路径错误
 export const AppDataSource = bootstrap().then((db) => {
   return new DataSource({
     ...(db as DbConfig),

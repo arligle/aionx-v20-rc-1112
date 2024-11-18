@@ -1,0 +1,26 @@
+{
+  "name": "typeorm-demo",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "examples/typeorm/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "typeorm-demo:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "typeorm-demo:build:development"
+        },
+        "production": {
+          "buildTarget": "typeorm-demo:build:production"
+        }
+      }
+    }
+  }
+}

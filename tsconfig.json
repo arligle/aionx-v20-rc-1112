@@ -23,6 +23,7 @@
     { "path": "./packages/common-types" },
     { "path": "./packages/service-api" },
     { "path": "./packages/utils" },
-    { "path": "./packages/typeorm" }
+    { "path": "./packages/typeorm" },
+    { "path": "./examples/typeorm" }
   ]
 }
